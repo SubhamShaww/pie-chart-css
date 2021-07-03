@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="add-your-filename-here.css">
+        <title>PIE CHART WITH CSS</title>
+
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-size: 62.5%;
+                font-family: 'Poppins', sans-serif; 
+            }
+
+            :root {
+                --width: 100vw;
+                --height: 100vh;
+            }
+
+            .main-div {
+                width: var(--width);
+                height: var(--height);
+                display: grid;
+                place-items: center;
+            }
+
+            .center-div {
+                width: calc(var(--width) * 0.6);
+                height: calc(var(--height) * 0.7);
+                border: 0.1rem solid #000;
+                position: relative;
+                box-shadow:
+                    0 0.28rem 0.22rem rgba(0, 0, 0, 0.034),
+                    0 0.67rem 0.53rem rgba(0, 0, 0, 0.048),
+                    0 1.25rem 1rem rgba(0, 0, 0, 0.06),
+                    0 2.23rem 1.79rem rgba(0, 0, 0, 0.072),
+                    0 4.18rem 3.34rem rgba(0, 0, 0, 0.086),
+                    0 10rem 8rem rgba(0, 0, 0, 0.12)
+            }
+
+            .pie-chart-wrapper {
+                display: grid;
+                place-items: center;
+            }
+
+            .pie-chart {
+                background: radial-gradient(circle closest-side, transparent 100%, #fff 0), conic-gradient(
+                from 180deg,
+                #ee5253 0,
+                #ee5253 35%,
+                #ff9f43 0,
+                #ff9f43 60%,
+                #f368e0 0,
+                #f368e0 75%,
+                #0abde3 0,
+                #0abde3 89%,
+                #10ac84 0,
+                #10ac84 100%
+                );
+                min-width: 25rem;
+                min-height: 25rem;
+                margin: 2rem;
+            }
+
+            .center-div h2 {
+                font-size: 3rem;
+                padding: 2rem;
+            }
+
+            .center-div p {
+                font-size: 1.5rem;
+                position: absolute;
+                bottom: 1rem;
+                right: 1rem;
+                text-align: right;
+            }
+
+            .center-div span::after {
+                content: "";
+                display: inline-block;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                background: currentColor;
+                font-weight: 700;
+                margin: 0 0.5rem;
+            }
+
+            .center-div h3 {
+                font-size: 1.5rem;
+                max-width: 35%;
+                position: absolute;
+                bottom: 0;
+                padding: 1.5rem;
+                color: grey;
+                font-style: italic;
+            }
+
+            @media screen and (max-width: 768px) {
+                * {
+                    font-size: 50%;
+                }
+            }
+
+            @media screen and (max-width: 540px) {
+                * { 
+                    font-size: 45%;
+                }   
+            }
+
+            @media screen and (max-width: 450px) {
+                * { 
+                    font-size: 34%;
+                }
+
+                .center-div p {
+                    text-align: left;
+                    top: 70%;
+                    left: 1rem;
+                }
+
+                .center-div h3 {
+                    max-width: 80%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-div">
+            <div class="center-div">
+                <h2>Current Vacination report in India.</h2>
+                <div class="pie-chart-wrapper"><div class="pie-chart"></div></div>
+                <p>
+                    Total Vaccination Doses 3459L<span style="color:#ee5253"></span><br>
+                    Dose-1 Vaccinations 2834L<span style="color:#f28e2c"></span><br>
+                    Dose-2 Vaccinations 625L<span style="color:#f368e0"></span><br>
+                    Total Vaccinated - Male 1858L<span style="color:#0abde3"></span><br>
+                    Total Vaccinated - Female 1600L<span style="color:#10ac84"></span><br>
+                </p>
+                <h3>India Vaccination status till now. This is demo data.</h3>
+            </div>
+        </div>
+    </body>
+</html>
+
